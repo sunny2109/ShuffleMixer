@@ -18,8 +18,7 @@ By [Long Sun](https://github.com/sunny2109), [Jinshan Pan](https://jspan.github.
 
 
 ### Training
-- Our model.
-- Run the following commands:
+- Run the following commands for training:
 ```
 python basicsr/train.py -opt options/train/ShuffleMixer/train_base_DF2K_x4.yml
 ```
@@ -38,11 +37,4 @@ python basicsr/test.py -opt options/test/ShuffleMixer/test_base_benchmark_x4.yml
 - Pretrained models and benchmark results can be downloaded [[Here]]().
 
 ## Citation
-```
-@InProceedings{Pan_2020_CVPR,
-	author = {Sun, Long and Pan, Jinshan and Tang, Jinhui},
-	title = {ShuffleMixer: An Efficient ConvNet for Image Super-Resolution},
-	booktitle = {arXiv preprint arXiv:2205.15175},
-	year = {2022}
-}
-```
+
