@@ -1,0 +1,107 @@
+# general settings
+# Calculted on the image size of 720P
+# Params: 0.113M  FLOPs: 7.806G  Activations: 0.138G
+name: ShuffleMixerSR_tiny_DF2K_300k_x4_09
+model_type: SRModel
+scale: 4
+num_gpu: 1  # set num_gpu: 0 for cpu mode
+manual_seed: 10
+
+# dataset and data loader settings
+datasets:
+  train:
+    name: DF2K
+    type: PairedImageDataset
+    dataroot_gt: /media/sunlong/78C88475C8843402/Codes/BasicSR_torch1.8/datasets/DF2K/DF2K_train_HR_sub
+    dataroot_lq: /media/sunlong/78C88475C8843402/Codes/BasicSR_torch1.8/datasets/DF2K/DF2K_train_LR_bicubic/X4_sub
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+
+    gt_size: 256
+    use_hflip: true
+    use_rot: true
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 8
+    batch_size_per_gpu: 64
+    dataset_enlarge_ratio: 10
+    prefetch_mode: ~
+
+  val:
+    name: DIV2K_val100
+    type: PairedImageDataset
+    dataroot_gt: /media/sunlong/78C88475C8843402/Codes/BasicSR_torch1.8/datasets/DIV2K/DIV2K_Valid/HR
+    dataroot_lq: /media/sunlong/78C88475C8843402/Codes/BasicSR_torch1.8/datasets/DIV2K/DIV2K_Valid/LR_bicubic/X4
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+# network structures
+network_g:
+  type: ShuffleMixer
+  n_feats: 32
+  kernel_size: 3
+  n_blocks: 5
+  mlp_ratio: 2
+  upscaling_factor: 4
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  resume_state: ~
+
+# training settings
+train:
+  ema_decay: 0.999
+  optim_g:
+    type: Adam
+    lr: !!float 5e-4
+    weight_decay: 0
+    betas: [0.9, 0.99]
+
+  scheduler:
+    type: MultiStepLR
+    milestones: [300000]
+    gamma: 1
+
+  total_iter: 300000
+  warmup_iter: -1  # no warm up
+
+  # losses
+  pixel_opt:
+    type: L1Loss
+    loss_weight: 1.0
+    reduction: mean
+
+  fft_opt:
+    type: FFTLoss
+    loss_weight: 0.1
+    reduction: mean
+
+# validation settings
+val:
+  val_freq: !!float 5e3
+  save_img: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: false
+
+# logging settings
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: true
+  wandb:
+    project: ~
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
