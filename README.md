@@ -15,6 +15,8 @@ By [Long Sun](https://github.com/sunny2109), [Jinshan Pan](https://jspan.github.
 - Python 3.8.5 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 - [PyTorch 1.11.0](https://pytorch.org/): `pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113` 
 - Install [BasicSR](https://github.com/XPixelGroup/BasicSR) toolbox, please see the [INSTALL.md](https://github.com/XPixelGroup/BasicSR/blob/master/docs/INSTALL.md) file.
+- einops `pip install einops`
+- fvcore `pip install -U fvcore`
 
 
 ### Training
