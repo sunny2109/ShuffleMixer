@@ -36,7 +36,7 @@ python basicsr/test.py -opt options/test/ShuffleMixer/test_base_benchmark_x4.yml
 
 
 ### Results
-- Pretrained models and benchmark results can be downloaded [[Here]]().
+- Pretrained models and benchmark results can be downloaded [[Here]](https://drive.google.com/drive/folders/10WD7beUyoJhrahwoxsiGpZFHkReaHLhi?usp=sharing).
 
 ## Citation
 
