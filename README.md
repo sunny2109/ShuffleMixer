@@ -9,6 +9,7 @@ By [Long Sun](https://github.com/sunny2109), [Jinshan Pan](https://jspan.github.
 
 
 ## Network Architecture
+<img src = "./assets/framework.png"> 
 
 ## Dependencies
 - Linux (Tested on Ubuntu 18.04)
@@ -39,4 +40,15 @@ python basicsr/test.py -opt options/test/ShuffleMixer/test_base_benchmark_x4.yml
 - Pretrained models and benchmark results can be downloaded [[Here]](https://drive.google.com/drive/folders/10WD7beUyoJhrahwoxsiGpZFHkReaHLhi?usp=sharing).
 
 ## Citation
+If you find this repository helpful, you may cite:
 
+```tex
+@InProceedings{Sun_2022,
+    author    = {Sun, Long and Pan, Jinshan and Tang, Jinhui},
+    title     = {{ShuffleMixer}: An Efficient ConvNet for Image Super-Resolution},
+    booktitle = {Advances in Neural Information Processing Systems},
+    year      = {2022}
+}
+```
+
+**Acknowledgment:** This code is based on the [BasicSR](https://github.com/xinntao/BasicSR) toolbox

@@ -7,7 +7,7 @@ import time
 import torch
 
 import basicsr.utils.img_util as util
-from basicsr.archs.convmixer_arch import ConvMixerSR
+from basicsr.archs.shufflemixer_arch import ShuffleMixer
 from collections import OrderedDict
 from basicsr.utils import get_root_logger, get_time_str
 from basicsr.utils.model_summary_util import get_model_activation, get_model_flops
@@ -67,7 +67,7 @@ def main(args):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # Define network and load model
-    model = ConvMixerSR(n_feats=64, n_blocks=5, mlp_ratio=2, upsacling_factor=4)
+    model = ShuffleMixer(n_feats=64, kernel_size=7, n_blocks=5, mlp_ratio=2, upscaling_factor=4)
     model.load_state_dict(torch.load(args.pretrain_model)['params'], strict=True)
     model.eval()
     for k, v in model.named_parameters():
