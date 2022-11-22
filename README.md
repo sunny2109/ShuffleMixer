@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/pytorch-1.11-%237732a8)](https://pytorch.org/)
 
-#### [Paper](https://arxiv.org/pdf/2205.15175.pdf) | [Discussion](https://github.com/sunny2109/ShuffleMixer/issues)
+#### [Paper](https://openreview.net/pdf?id=ZK6lzx0jqdZ) | [Discussion](https://github.com/sunny2109/ShuffleMixer/issues)
 ### ShuffleMixer: An Efficient ConvNet for Image Super-Resolution
 By [Long Sun](https://github.com/sunny2109), [Jinshan Pan](https://jspan.github.io/), and Jinhui Tang
 
