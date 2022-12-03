@@ -77,7 +77,7 @@ train:
     reduction: mean
 
   freq_opt:
-    type: FrequencyLoss
+    type: FFTLoss
     loss_weight: 0.1
     reduction: mean
 
