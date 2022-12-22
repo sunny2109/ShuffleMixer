@@ -37,7 +37,7 @@ python basicsr/test.py -opt options/test/ShuffleMixer/test_base_benchmark_x4.yml
 
 
 ### Results
-- Pretrained models and benchmark results can be downloaded [[Here]](https://drive.google.com/drive/folders/10WD7beUyoJhrahwoxsiGpZFHkReaHLhi?usp=sharing).
+- Pretrained models and benchmark results can be downloaded from [[Google Drive]](https://drive.google.com/drive/folders/10WD7beUyoJhrahwoxsiGpZFHkReaHLhi?usp=sharing) or [[Baidu Cloud]](https://pan.baidu.com/s/19fhXkd--G0mbdmgsTN7fXg) with code: idtn.
 
 ## Citation
 If you find this repository helpful, you may cite:
