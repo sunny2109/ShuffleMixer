@@ -15,9 +15,20 @@ By [Long Sun](https://github.com/sunny2109), [Jinshan Pan](https://jspan.github.
 - Linux (Tested on Ubuntu 18.04)
 - Python 3.8.5 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 - [PyTorch 1.11.0](https://pytorch.org/): `pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113` 
-- Install [BasicSR](https://github.com/XPixelGroup/BasicSR) toolbox, please see the [INSTALL.md](https://github.com/XPixelGroup/BasicSR/blob/master/docs/INSTALL.md) file.
 - einops `pip install einops`
 - fvcore `pip install -U fvcore`
+
+### Installation
+```
+# Clone the repo
+git clone https://github.com/sunny2109/ShuffleMixer.git
+# Install dependent packages
+cd ShuffleMixer
+pip install -r requirements.txt
+# Install BasicSR
+python setup.py develop
+```
+You can also refer to this [INSTALL.md](https://github.com/XPixelGroup/BasicSR/blob/master/docs/INSTALL.md) for installation
 
 
 ### Training
